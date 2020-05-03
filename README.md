@@ -9,16 +9,16 @@
 
 ## @프로젝트 개발 환경
 > node.js를 사용
-> ## Google Cloud Vision API 설치:
+> ### Google Cloud Vision API 설치:
 > npm install --save @google-cloud/vision
-> ## Google Cloud Translate API 설치:    
+> ### Google Cloud Translate API 설치:    
       
 
 ## @자주 쓰이는 git 명령어들
 > 브랜치 생성:
 > git branch <브랜치명>
 >
-> ## 브랜치 바꾸기:
+> ### 브랜치 바꾸기:
 > git checkout <브랜치명>
 >
 > 현재 브랜치 확인:
@@ -30,10 +30,10 @@
 > 커밋하기:
 > git commit -m <메시지>
 >
-> ## 스테이지에 올리고 커밋하기(add와 commit을 동시에):
+> ### 스테이지에 올리고 커밋하기(add와 commit을 동시에):
 > git commit -a -m <메시지>
 >
-> ## 특정 브랜치 복제해오기:
+> ### 특정 브랜치 복제해오기:
 > git clone -b {branch_name} --single-branch {저장소 URL}    
 > ex) git clone -b f/upload --single-branch https://github.com/Namjiwoon/FOOD-translation/edit/master/README.md
 >
