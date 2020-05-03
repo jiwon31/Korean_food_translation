@@ -34,11 +34,11 @@ git commit -m <메시지>
 git commit -a -m <메시지>
 
 #### 특정 브랜치 복제해오기:
-git clone -b {branch_name} --single-branch {저장소 URL}
+git clone -b {branch_name} --single-branch {저장소 URL}    
 ex) git clone -b f/upload --single-branch https://github.com/Namjiwoon/FOOD-translation/edit/master/README.md
 
 remote 저장소 add(url에 별명 붙여주는 명령어):
-git remote add [단축이름] [url]
+git remote add [단축이름] [url]    
 ex) git remote add web1 https://github.com/Namjiwoon/FOOD-translation/edit/master/README.md
 => url의 다축이름을 web1으로 설정
 
