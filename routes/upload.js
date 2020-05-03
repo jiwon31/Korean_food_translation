@@ -14,8 +14,13 @@ const upload = multer({
     }),
   });
 
+router.get('/', function(req, res, next) {
+   res.render('image');
+  });
+
 router.post('/', upload.single('img'), async (req, res, next) => {
     try {
+      res.render('image');
         console.log(req.file);
     }
     catch(err) {

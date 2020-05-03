@@ -1,0 +1,127 @@
+@charset "utf-8";
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: inherit;
+}
+
+/* main */
+
+.language {
+  color: black;
+  text-align: center;
+  font-size: 3em;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+  width: 40%;
+  height: 20%;
+  padding-bottom: 20px;
+}
+
+select {
+  padding: 1em;
+  font-size: 0.3em;
+  width: 40%;
+  border: royalblue 3px solid;
+}
+
+input {
+  display: block;
+  margin: 1em auto 0 auto;
+  padding: 1em;
+  font-size: 0.3em;
+  width: 40%;
+  border: royalblue 3px solid;
+}
+
+
+/* footer */
+.top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 2em;
+  color: black;
+}
+
+.top a {
+  display: inline-block;
+  color: black;
+  opacity: 1;
+
+  -webkit-transition: all 0.55s ease;
+  -moz-transition: all 0.55s ease;
+  -ms-transition: all 0.55s ease;
+  -o-transition: all 0.55s ease;
+  transition: all 0.55s ease;
+}
+
+.top a:hover {
+  color: red;
+}
+
+/*반응형*/
+@media all and (max-width: 768px) { /*태블릿*/
+  .language {
+    left: 25%;
+    width: 50%;
+  }
+  select {
+    width: 100%;
+  }
+  
+  input {
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 500px) { /*핸드폰*/
+  .language {
+    left: 15%;
+    width: 70%;
+  }
+  select {
+    width: 100%;
+  }
+  
+  input {
+    width: 100%;
+  }
+}
+
+@media all and (min-width:500px) { /*태블릿, 컴퓨터*/
+}
