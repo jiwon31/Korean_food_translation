@@ -1,10 +1,10 @@
 # 한국어 메뉴판을 외국어로 번역해주는 웹페이지
 ### @프로젝트 소개
-한국어 메뉴판을 외국어로 번역해주는 웹페이지로 Google Cloud Vision API와 Google Cloud Translate API를 사용한다.
+한국어 메뉴판을 외국어로 번역해주는 웹페이지로 Google Cloud Vision API와 Google Cloud Translate API를 사용한다.   
 
 
 ### @프로젝트 규칙
-1. github에 소스코드 커밋해서 공유
+1. github에 소스코드 커밋해서 공유   
 
 
 ### @프로젝트 개발 환경
@@ -12,7 +12,7 @@ node.js를 사용
 #### Google Cloud Vision API 설치:
 npm install --save @google-cloud/vision
 #### Google Cloud Translate API 설치:
-
+   
 
 ### @자주 쓰이는 git 명령어들
 브랜치 생성:
