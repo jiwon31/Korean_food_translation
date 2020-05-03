@@ -9,14 +9,14 @@
 
 ### @프로젝트 개발 환경
 > node.js를 사용
-#### Google Cloud Vision API 설치:
-npm install --save @google-cloud/vision
-#### Google Cloud Translate API 설치:    
+> #### Google Cloud Vision API 설치:
+> npm install --save @google-cloud/vision
+> #### Google Cloud Translate API 설치:    
       
 
 ### @자주 쓰이는 git 명령어들
-브랜치 생성:
-git branch <브랜치명>
+> 브랜치 생성:
+> > git branch <브랜치명>
 
 #### 브랜치 바꾸기:
 git checkout <브랜치명>
