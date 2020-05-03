@@ -4,11 +4,11 @@
    
 
 ### @프로젝트 규칙
-1. github에 소스코드 커밋해서 공유       
+> 1. github에 소스코드 커밋해서 공유       
    
 
 ### @프로젝트 개발 환경
-node.js를 사용
+> node.js를 사용
 #### Google Cloud Vision API 설치:
 npm install --save @google-cloud/vision
 #### Google Cloud Translate API 설치:    
