@@ -42,6 +42,6 @@
 > ex) git remote add web1 https://github.com/Namjiwoon/FOOD-translation/edit/master/README.md   
 > => url의 다축이름을 web1으로 설정      
 > 
-> <branch>를 remote저장소(git hub)에 push:   
-> git push <remote> <branch>      
+> branch를 remote저장소(git hub)에 push:   
+> git push remote branch      
 
