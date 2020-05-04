@@ -45,3 +45,23 @@
 > branch를 remote저장소(git hub)에 push:   
 > git push remote branch      
 
+## 브랜치 덮어쓰기 명령어
+> 브랜치를 덮어쓰기 위해서는 일단 병합하기 위한 두개의 브런치가 필요하다.
+>    
+>    
+> 두개의 브런치가 없을 경우에만 실행:
+> 원격 브런치 확인
+> git branch -a
+>   
+> 병합하는 데 필요한 브런치를 가져옴
+> git checkout -b 새브랜치명 origin/가져올브랜치명
+> 
+> ###두 개의 경우 중 하나 선택
+> 1. 내 브런치를 다른 브랜치에 덮어 씌울 경우(내 것으로 auto merge)
+> git merge -X ours 다른브랜치명
+>
+> 2. 다른 브랜치를 내 브랜치에 덮어 씌울 경우(상대 것으로 auto merge)
+> git merge -X theirs 다른브랜치명
+>
+> git commit -a -m "커밋 메시지"
+> git push origin 브랜치명
