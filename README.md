@@ -11,7 +11,8 @@
 > node.js를 사용
 > ### Google Cloud Vision API 설치:
 > npm install --save @google-cloud/vision
-> ### Google Cloud Translate API 설치:    
+> ### Google Cloud Translate API 설치:
+> npm install --save @google-cloud/translate
       
 
 ## @자주 쓰이는 git 명령어들
