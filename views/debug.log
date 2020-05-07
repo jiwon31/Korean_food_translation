@@ -1,2 +1,0 @@
-[0508/043455.757:ERROR:file_io.cc(89)] ReadExactly: expected 5992, observed 0
-[0508/043455.759:ERROR:crash_report_database_win.cc(445)] failed to read records
