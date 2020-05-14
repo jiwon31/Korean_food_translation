@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="example.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript" src="./js/view.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
+    <script type="text/javascript">
+      $(function(){
+        var text = $('.img .content');
+        var btn_left = $('.btn_left');
+        var btn_right = $('.btn_right');
+        btn_left.click(function(){
+          text.css('left','20%');
+        });
+        btn_right.click(function(){
+          text.css('left','70%');
+        });
+      });
+      </script>
+    <title>SSU Menu</title>
+  </head>
+  <body>
+    <main>
+      <p class="btn btn_left">left</p>
+      <p class="btn btn_right">right</p>
+        <div class="img">
+            <div class="content">
+                <h1>치킨</h1>
+                <h2>먹고싶다</h2>
+            </div>
+            <div class="img-cover"></div>
+        </div>
+    </main>
+
+    <footer>
+      </div>
+      <div class="top">
+        <a href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>
