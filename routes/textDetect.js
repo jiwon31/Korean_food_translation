@@ -1,6 +1,7 @@
 'use strict';
+const menu = {};
+menu.detectText = async function (fileName) {
 
-async function detectText(fileName) {
     // [START vision_text_detection]
     const vision = require('@google-cloud/vision');
 
@@ -20,4 +21,6 @@ async function detectText(fileName) {
     // [END vision_text_detection]
 }
 
-detectText().catch(console.error);
+//detectText().catch(console.error);
+
+module.exports = menu;

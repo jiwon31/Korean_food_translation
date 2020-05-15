@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "zeta-arena-273600",
+  "private_key_id": "288efa7518164285beb94129c4f08254fd7d3e6f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCNmf4O92iFYKN6\nlkF5a1w18vrGNiCHh1imkB5RnzwtBvCFCpEibXD0+5Us2usTAD3+xvSFoMPKPQOJ\nPAvfGBEmtEEXl9Lt/Xeh1gN0ZZdJJ5ypPr7bW3iXYUseLh/U/P48LkwLRky1e5UZ\nqkn/TAO9O9DHlfu+7+py1Ig6aCcdTf/LVXIh8/iTtlqWAOp70c4bqRQxs7nycSIF\nYgcmnA0HdSEncjRwuEusmUKOV6vAknjR39mni2EIGptuOlbxVNzQuSvQwXTRtKXQ\nlxKwcsgqto5noIU8Of29Px0ErnRjYP1NdYdeUyoQNfw5eHZgGmV28faBwDMzt1lj\nq4Cu5F+/AgMBAAECggEAGusTx2+T8IsC+NpYfwcARAc5UfXXMDx0B1HtWZHeRCcG\nERyFo5hPeVrcLGc/eeC5aFYVBNQfdDIuGmgOT65JEGUC3MPRZsmg9OR0yqtHW7JK\nj0fsy1Fztr9Zotac2YXwpKsebKRED9n66aKcJ4qhSVd2JILoFQ+Rr5ukfAnxqZmy\nZ7ZpcE16xVeJjsOXm7Wd+ohbCJ51XkpHDL0PO/HJaIGdIQ2ilKuOHaUbSUgqHKqy\n5QRQ2PY8TNjhq/dNyrEBk/OEDmeDBo4ligFUVpVIej4lm99D6UktaG1VGtcWdPU3\nKhhK2fdFRK015XzHu3yPF+jXU07fDV1eg9e+2oDW4QKBgQDCcti2J+/cTg4vXZ3R\nMmz2l4sWtl+OxoDfMe6Mx7ZtsxquUm70/fDFrU+twYIpyjZxeHdC2qBf86669SlX\nVm4/DNsrIMuWQ4DF790ld9LX4v04KkV2IcKE8lgAV6sa3fl79v8IjYg9gDt+H/nO\niiyGAy/fSEy9lhs+lXmu6KZioQKBgQC6bK38Ofv+DKEXj0hOeDVZ3vQ22lgK0Dfy\nYR5Y6Ge8ms1sYGLGFZSEUYRPOeULV0dwKUpizslCN0cYW1/t3J5CrPwdrrnj+pSn\nmnmAPDfcUSnPg87Pwy+xY/jIZ27PjzZpu1MfakkN9FDdkqS3d6XhaklqncYOTfyv\nDnbOWRYGXwKBgQCHvlMJPvIUsqz2Zf1BSFmHAB4KGgC1lF/s8FefEeCJzmnG3ic1\ngn1uEmI4Y4lxkQfWyQlAs40Xzu7g9zsIDH9kJp5uCjP1z2P7Skrw2Chpq72oUuIw\n6Lp5wxCqFImPdPywjKpXly5P+NAPaVUj2ZPhbiIiVr+z7jFQzFqpPyLAYQKBgCZY\nRFEk/Bf9MQVPi2fYgeDCYykFMCbJPTi1kTBoXS4GCUrJaIel2K5+teA14E683QzM\n8WfxcKQWCqGP6eNbBZJhUloonkOuPvVaaLNfr325lAgC7H7/fsfV8E4IOFqo8mA9\nD5PeoLgmEJwCla7HBW+gFQnA+gPnNporN3SqDkWxAoGAP+woAC8PsRGZRj79Q6sn\nYTJHajaufgkmxbQpuG4/HEV3DuXA0m071BHd1+tDOzZhQCUgAuLsTf3N+BT552qL\nGE7mtTIYFtcDno3GLhYieVCvpRWdEpklu2haP8x1vj0MDMP9iaD44RU9myak5N27\nPZQYIpGRAKN+3E8815PQCKk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "test-808@zeta-arena-273600.iam.gserviceaccount.com",
+  "client_id": "111014040553288019991",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/test-808%40zeta-arena-273600.iam.gserviceaccount.com"
+}

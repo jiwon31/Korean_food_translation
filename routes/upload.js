@@ -1,7 +1,7 @@
 var express = require('express');
 var multer = require('multer');
-
 var router = express.Router();
+var menu = require("./textDetect");
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -21,12 +21,16 @@ router.get('/', function(req, res, next) {
 router.post('/', upload.single('img'), async (req, res, next) => {
     try {
       res.render('image');
-        console.log(req.file);
+      //console.log(req.file.filename);
+      const filename = req.file.filename;
+      menu.detectText(filename);
     }
-    catch(err) {
-        console.err(err);
+    catch{
+      console.err(err);
     }
+
   });
 
+ 
 
 module.exports = router;
