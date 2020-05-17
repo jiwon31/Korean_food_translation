@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    href="../public/stylesheets/style.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script type="text/javascript" src="./js/view.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
+    <script type="text/javascript">
+      $(function(){
+        var rect = $('rect'); // css의 rect를 rect 변수에 넣기
+        /* for test
+        var btn1 = $('.btn1'); 
+        var btn2 = $('.btn2');
+        btn1.click(function(){
+          document.getElementById( 'rect' ).setAttribute( 'x', '33' ); // html의 id가 rect인 속성의 x를 33으로 변환 (왼쪽 위의 꼭지점의 x값)
+          document.getElementById( 'rect' ).setAttribute( 'y', '65' ); // html의 id가 rect인 속성의 y를 65으로 변환 (왼쪽 위의 꼭지점의 y값)
+          var width = 182 - 33; // 오른쪽 위의 꼭지점의 x값에서 왼쪽 위의 꼭지점의 x값을 빼서 width 변수에 넣기
+          var height = 106 - 65; // 왼쪽 아래의 꼭지점의 y값에서 왼쪽 위의 꼭지점의 y값을 빼서 height 변수에 넣기
+          rect.css('width', width); // rect의 css에서 width를 위에서 계산한 width의 값으로 변환
+          rect.css('height', height); // rect의 css에서 height를 위에서 계산한 height의 값으로 변환
+          document.getElementById( 'text' ).setAttribute( 'x', 33+10 ); // html의 id가 text인 속성의 x값을 33+10으로 변환 (왼쪽 위의 꼭지점의 x값에 10(여백)더하기)
+          document.getElementById( 'text' ).setAttribute( 'y', 65+10 ); // html의 id가 text인 속성의 y값을 65+10으로 변환 (왼쪽 위의 꼭지점의 y값에 10(여백)더하기)
+          
+        });
+        btn2.click(function(){
+          document.getElementById( 'rect' ).setAttribute( 'x', '368' );
+          document.getElementById( 'rect' ).setAttribute( 'y', '235' );
+          var width = 578 - 368;
+          var height = 346 - 235;
+          rect.css('width', width);
+          rect.css('height', height);
+          document.getElementById( 'text' ).setAttribute( 'x', 368+10 );
+          document.getElementById( 'text' ).setAttribute( 'y', 235+10 );
+        });*/
+      });
+      </script>
+    <title>SSU Menu</title>
+  </head>
+  <body>
+    <main>
+        <!--for test
+      <button class="btn1">(33, 65, 182, 106)</button>
+      <button class="btn2">(368, 235, 578, 346)</button>-->
+        <div class="img">
+          <svg id=svg>
+            <rect id = rect x="10" y="20"/>
+            <text id = text x="50" y="60" dx="10" dy="15">
+                <!--번역한 문자열-->
+            </text>
+          </svg>
+        </div>
+    </main>
+
+    <footer>
+      </div>
+      <div class="top">
+        <a href="#top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </footer>
+  </body>
+</html>
