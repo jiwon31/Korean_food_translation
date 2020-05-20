@@ -1,26 +1,17 @@
-'use strict';
-const menu = {};
-menu.detectText = async function (fileName) {
-
-    // [START vision_text_detection]
+//'use strict';
+module.exports = async function (fileName) {
+    console.log("detectText함수 실행중\n");
     const vision = require('@google-cloud/vision');
-
-    // Creates a client
     const client = new vision.ImageAnnotatorClient();
 
-    /**
-     * TODO(developer): Uncomment the following line before running the sample.
-     */
-    //fileName = '이미지파일 경로';
-
-    // Performs text detection on the local file
-    const [result] = await client.textDetection(fileName);
+    fileName = '../uploads/menu2.jpg';
+    const [result] = await client.documentTextDetection(fileName);
     const detections = result.textAnnotations;
-    console.log('Text:');
-    detections.forEach(text => console.log(text));
-    // [END vision_text_detection]
-}
 
-//detectText().catch(console.error);
-
-module.exports = menu;
+    array = [];
+    detections.forEach(text => array.push({description : text.description, boundingPoly : text.boundingPoly.vertices}));
+    console.log("print array\n");
+    console.log(array);
+ 
+    return array;
+};
