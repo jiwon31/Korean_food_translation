@@ -8,7 +8,12 @@ module.exports = async function (fileName) {
     const detections = result.textAnnotations;
 
     array = [];
-    detections.forEach(text => array.push({description : text.description, boundingPoly : text.boundingPoly.vertices}));
+    detections.forEach(text => {
+        let description = text.description.replace(/[0-9]|,|\s$/gi, "");
+        if(description != ""){
+            array.push({description : description, boundingPoly : text.boundingPoly.vertices});
+        }
+    });
     //console.log("print array\n");
     //console.log(array);
  

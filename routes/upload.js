@@ -23,9 +23,8 @@ router.post('/result', upload.single('img'), async (req, res, next) => {
     try {
       res.render('result');
       const filename = req.file.filename;
-
       let text = await textDetect(filename);
-
+      
       for(var i in text){
         text[i].translation = await textTranslate(text[i].description, 'en');
       }
