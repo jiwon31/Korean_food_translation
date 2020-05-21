@@ -1,7 +1,8 @@
 var express = require('express');
 var multer = require('multer');
 var router = express.Router();
-var menu = require("./textDetect");
+var textDetect = require("./textDetect");
+var textTranslate = require("./textTranslate");
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -18,19 +19,30 @@ router.get('/', function(req, res, next) {
    res.render('image');
   });
 
-router.post('/', upload.single('img'), async (req, res, next) => {
+router.post('/result', upload.single('img'), async (req, res, next) => {
     try {
-      res.render('image');
-      //console.log(req.file.filename);
+      res.render('result');
       const filename = req.file.filename;
-      menu.detectText(filename);
+
+      let text = await textDetect(filename);
+
+      for(var i in text){
+        text[i].translation = await textTranslate(text[i].description, 'en');
+      }
+
+      text.forEach((t) => {
+        console.log(t.description);
+        console.log("=> " + t.translation);
+        console.log(t.boundingPoly);
+        console.log("--------------------");
+      });
+
     }
-    catch{
-      console.err(err);
+    catch(err){
+      console.error(err);
     }
 
   });
-
  
 
 module.exports = router;

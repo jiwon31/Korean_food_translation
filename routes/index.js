@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var textArray = require('./textDetect');
-
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  console.log("실행중");
-  textArray();
-  res.render('index', { array: 'textArray' });
+  res.render('index');
+});
+
+router.post('/', function(req, res, next) {
+  //언어 받아오기
 });
 
 
