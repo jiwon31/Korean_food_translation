@@ -21,6 +21,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/image', uploadRouter);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 app.listen(3000, function(){

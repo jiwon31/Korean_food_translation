@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-    href="stylesheets/style.css"
+      href="../stylesheets/style.css"
       rel="stylesheet"
       type="text/css"
     />
@@ -17,7 +17,10 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
     <script type="text/javascript">
       $(function(){
+        //var img = $('.img');
         var rect = $('rect'); // css의 rect를 rect 변수에 넣기
+        //img.css('background-image', 'url(../' +  path  + ')');
+        
         /* for test
         var btn1 = $('.btn1'); 
         var btn2 = $('.btn2');
@@ -48,10 +51,12 @@
   </head>
   <body>
     <main>
+      <!--<% var node = 'Node.js' %>-->
+      <!--<p><%= path %></p>-->
         <!--for test
       <button class="btn1">(33, 65, 182, 106)</button>
       <button class="btn2">(368, 235, 578, 346)</button>-->
-        <div class="img">
+        <div class="img" style="background-image: url(../<%= path %>);">
           <svg id=svg>
             <rect id = rect x="10" y="20"/>
             <text id = text x="50" y="60" dx="10" dy="15">

@@ -21,7 +21,9 @@ router.get('/', function(req, res, next) {
 
 router.post('/result', upload.single('img'), async (req, res, next) => {
     try {
-      res.render('result');
+      console.log(req.file);
+      var path = "uploads/" + req.file.filename;
+      res.render('result', {path: path});
       const filename = req.file.filename;
       let text = await textDetect(filename);
       
