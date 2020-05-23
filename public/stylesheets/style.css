@@ -83,8 +83,7 @@ input {
 
 .img{
   display: inline-block;
-  position: static;
-  /*background-image: url(../uploads/a.jpg);  */  
+  position: static; 
   width: 100vh;                                           
   height: 100vh; 
   background-size: contain;
@@ -100,21 +99,10 @@ svg {
 
 /* 기존 test 가릴 사각형 */
 rect { 
-  /*width:180px;
-  height:200px;*/
   stroke-width:4px;
   stroke:black;
   fill:orange;
 }
-
-/* for test */
-/*button {
-  cursor:pointer;
-  margin:10px;
-  background-color: aqua;
-  border-radius: 3px;
-  border: 3px solid blue;
-}*/
 
 
 /* footer */

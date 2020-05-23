@@ -14,78 +14,10 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script type="text/javascript" src="./js/view.js"></script>
-    <!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
-    <script type="text/javascript">
-      $(function(){
-        <% for (var i = 1; i < position.length; i++) { %>
-          var rect = $('rect');
-          var x = <%= position[i].boundingPoly[0].x%> / <%= width %> * 100;
-          var y = <%= position[i].boundingPoly[0].y%> / <%= height %> * 100;
-          var width = (<%= position[i].boundingPoly[1].x%> - <%= position[i].boundingPoly[0].x%>) / <%= width %> * 100;
-          var height = (<%= position[i].boundingPoly[2].y%> - <%= position[i].boundingPoly[0].y%>) / <%= height %> * 100;
-          document.getElementById( "rect<%= i %>" ).setAttribute( 'x', x + '%' ); // html의 id가 rect인 속성의 x를 33으로 변환 (왼쪽 위의 꼭지점의 x값)
-          document.getElementById( "rect<%= i %>" ).setAttribute( 'y', y + '%' ); // html의 id가 rect인 속성의 y를 65으로 변환 (왼쪽 위의 꼭지점의 y값)
-          rect.css('width', width + '%' ); // rect의 css에서 width를 위에서 계산한 width의 값으로 변환
-          rect.css('height', height + '%' ); // rect의 css에서 height를 위에서 계산한 height의 값으로 변환
-          //document.getElementById( 'text' ).setAttribute( 'x', x + '%' ); // html의 id가 text인 속성의 x값을 33+10으로 변환 (왼쪽 위의 꼭지점의 x값에 10(여백)더하기)
-         //document.getElementById( 'text' ).setAttribute( 'y', y + '%' ); // html의 id가 text인 속성의 y값을 65+10으로 변환 (왼쪽 위의 꼭지점의 y값에 10(여백)더하기)
-        <% } %>
-        //var img = $('.img');
-        //var rect = $('rect'); // css의 rect를 rect 변수에 넣기
-        //document.write('test');
-        /*var x = <%= position[1].boundingPoly[0].x%> / <%= width %> * 100;
-        var y = <%= position[1].boundingPoly[0].y%> / <%= height %> * 100;
-        var width = (<%= position[1].boundingPoly[1].x%> - <%= position[1].boundingPoly[0].x%>) / <%= width %> * 100;
-        var height = (<%= position[1].boundingPoly[2].y%> - <%= position[1].boundingPoly[0].y%>) / <%= height %> * 100;
-        //document.write(x);
-        document.getElementById( 'rect' ).setAttribute( 'x', x + '%' ); // html의 id가 rect인 속성의 x를 33으로 변환 (왼쪽 위의 꼭지점의 x값)
-        document.getElementById( 'rect' ).setAttribute( 'y', y + '%' ); // html의 id가 rect인 속성의 y를 65으로 변환 (왼쪽 위의 꼭지점의 y값)
-        rect.css('width', width + '%' ); // rect의 css에서 width를 위에서 계산한 width의 값으로 변환
-        rect.css('height', height + '%' ); // rect의 css에서 height를 위에서 계산한 height의 값으로 변환
-        document.getElementById( 'text' ).setAttribute( 'x', x + '%' ); // html의 id가 text인 속성의 x값을 33+10으로 변환 (왼쪽 위의 꼭지점의 x값에 10(여백)더하기)
-        document.getElementById( 'text' ).setAttribute( 'y', y + '%' ); // html의 id가 text인 속성의 y값을 65+10으로 변환 (왼쪽 위의 꼭지점의 y값에 10(여백)더하기)*/
-          /*var width = 182 - 33; // 오른쪽 위의 꼭지점의 x값에서 왼쪽 위의 꼭지점의 x값을 빼서 width 변수에 넣기
-          var height = 106 - 65; // 왼쪽 아래의 꼭지점의 y값에서 왼쪽 위의 꼭지점의 y값을 빼서 height 변수에 넣기
-          rect.css('width', width); // rect의 css에서 width를 위에서 계산한 width의 값으로 변환
-          rect.css('height', height); // rect의 css에서 height를 위에서 계산한 height의 값으로 변환
-          document.getElementById( 'text' ).setAttribute( 'x', 33+10 ); // html의 id가 text인 속성의 x값을 33+10으로 변환 (왼쪽 위의 꼭지점의 x값에 10(여백)더하기)
-          document.getElementById( 'text' ).setAttribute( 'y', 65+10 ); // html의 id가 text인 속성의 y값을 65+10으로 변환 (왼쪽 위의 꼭지점의 y값에 10(여백)더하기)*/
-        
-        /* for test
-        var btn1 = $('.btn1'); 
-        var btn2 = $('.btn2');
-        btn1.click(function(){
-          document.getElementById( 'rect' ).setAttribute( 'x', '33' ); // html의 id가 rect인 속성의 x를 33으로 변환 (왼쪽 위의 꼭지점의 x값)
-          document.getElementById( 'rect' ).setAttribute( 'y', '65' ); // html의 id가 rect인 속성의 y를 65으로 변환 (왼쪽 위의 꼭지점의 y값)
-          var width = 182 - 33; // 오른쪽 위의 꼭지점의 x값에서 왼쪽 위의 꼭지점의 x값을 빼서 width 변수에 넣기
-          var height = 106 - 65; // 왼쪽 아래의 꼭지점의 y값에서 왼쪽 위의 꼭지점의 y값을 빼서 height 변수에 넣기
-          rect.css('width', width); // rect의 css에서 width를 위에서 계산한 width의 값으로 변환
-          rect.css('height', height); // rect의 css에서 height를 위에서 계산한 height의 값으로 변환
-          document.getElementById( 'text' ).setAttribute( 'x', 33+10 ); // html의 id가 text인 속성의 x값을 33+10으로 변환 (왼쪽 위의 꼭지점의 x값에 10(여백)더하기)
-          document.getElementById( 'text' ).setAttribute( 'y', 65+10 ); // html의 id가 text인 속성의 y값을 65+10으로 변환 (왼쪽 위의 꼭지점의 y값에 10(여백)더하기)
-          
-        });
-        btn2.click(function(){
-          document.getElementById( 'rect' ).setAttribute( 'x', '368' );
-          document.getElementById( 'rect' ).setAttribute( 'y', '235' );
-          var width = 578 - 368;
-          var height = 346 - 235;
-          rect.css('width', width);
-          rect.css('height', height);
-          document.getElementById( 'text' ).setAttribute( 'x', 368+10 );
-          document.getElementById( 'text' ).setAttribute( 'y', 235+10 );
-        });*/
-      });
-      </script>-->
     <title>SSU Menu</title>
   </head>
   <body>
     <main>
-      <!--<% var node = 'Node.js' %>
-      <p><%= width %> <%= height %> <%= position[1].boundingPoly[0].x%> <%= position[1].boundingPoly[0].y%> <%= position[1].boundingPoly[1].x%> <%= position[1].boundingPoly[2].y%></p>-->
-        <!--for test
-      <button class="btn1">(33, 65, 182, 106)</button>
-      <button class="btn2">(368, 235, 578, 346)</button>-->
       <div class=wrap>
         <div class="img" style="background-image: url(../<%= path %>);">
           <svg id=svg>
