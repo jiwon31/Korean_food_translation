@@ -23,7 +23,9 @@ router.post('/result', upload.single('img'), async (req, res, next) => {
     try {
       console.log(req.file);
       var path = "uploads/" + req.file.filename;
-      res.render('result', {path: path});
+      var sizeOf = require('image-size');
+      var dimensions = sizeOf(path);
+      res.render('result', {path: path, width: dimensions.width, height: dimensions.height});
       const filename = req.file.filename;
       let text = await textDetect(filename);
       
