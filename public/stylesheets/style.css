@@ -40,6 +40,11 @@ a:visited {
 
 /* main */
 
+main {
+  display: block;
+  text-align: center;
+}
+
 .language {
   color: black;
   text-align: center;
@@ -69,11 +74,22 @@ input {
 }
 
 /* image */
+
+.wrap{
+  width:100%;
+  height:100%;
+  text-align: center;
+}
+
 .img{
-  position: relative;
-  /*background-image: url(../uploads/a.jpg);  */                                                      
-  height: 100vh;
-  background-size: cover;
+  display: inline-block;
+  position: static;
+  /*background-image: url(../uploads/a.jpg);  */  
+  width: 100vh;                                           
+  height: 100vh; 
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
 }
 
 /* rect이 들어갈 공간 */
@@ -84,8 +100,8 @@ svg {
 
 /* 기존 test 가릴 사각형 */
 rect { 
-  width:180px;
-  height:200px;
+  /*width:180px;
+  height:200px;*/
   stroke-width:4px;
   stroke:black;
   fill:orange;
@@ -139,6 +155,12 @@ rect {
   input {
     width: 100%;
   }
+
+  .img{
+    margin-top: 20vh;
+    width: 100%; 
+    height: 80vh;
+  }
 }
 
 @media all and (max-width: 500px) { /*핸드폰*/
@@ -152,6 +174,11 @@ rect {
   
   input {
     width: 100%;
+  }
+  .img{
+    margin-top: 20vh;
+    width: 100%; 
+    height: 80vh;
   }
 }
 

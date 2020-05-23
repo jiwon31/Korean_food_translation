@@ -15,7 +15,7 @@ module.exports = async function (fileName) {
         }
     });
     //console.log("print array\n");
-    //console.log(array);
+    //console.log(array.boundingPoly[0].x);
  
     return array;
 };
