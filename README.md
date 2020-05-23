@@ -36,7 +36,7 @@
 >
 > ### 특정 브랜치 복제해오기:   
 > git clone -b {branch_name} --single-branch {저장소 URL}       
-> ex) git clone -b f/upload --single-branch https://github.com/Namjiwoon/FOOD-translation/edit/master/README.md   
+> ex) git clone -b f/upload --single-branch https://github.com/Namjiwoon/FOOD-translation.git 
 >
 > remote 저장소 add(url에 별명 붙여주는 명령어):   
 > git remote add [단축이름] [url]       
