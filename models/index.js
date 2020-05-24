@@ -10,6 +10,6 @@ const sequelize = new Sequelize(config.database,config.username,config.password,
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-db.User =require('./data')(sequelize,Sequelize);
+db.Data =require('./data')(sequelize,Sequelize);
 
 module.exports = db;

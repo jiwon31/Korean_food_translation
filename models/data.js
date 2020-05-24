@@ -1,28 +1,23 @@
 module.exports = (sequelize,DataTypes) => (
     sequelize.define('data',{
-        name: {
-            type : DataTypes.STRING(20),
+        koname: {
+            type : DataTypes.STRING(70),
             allowNull : false,
-            unique : true,
+        },
+        enname: {
+            type : DataTypes.STRING(70),
+            allowNull : true,
         },
         en: {
-            type : DataTypes.STRING(40),
-            allowNull : true,
-        },
-        zh: {
-            type : DataTypes.STRING(40),
-            allowNull : true,
-        },
-        za: {
-            type : DataTypes.STRING(40),
+            type : DataTypes.STRING(100),
             allowNull : true,
         },
         img: {
-            type : DataTypes.STRING(40),
+            type : DataTypes.STRING(100),
             allowNull : true,
         },
         info: {
-            type : DataTypes.STRING(40),
+            type : DataTypes.STRING(500),
             allowNull : true,
         },
     },{
