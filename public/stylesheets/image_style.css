@@ -1,0 +1,194 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GmarketSansLight";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  background: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:link,
+a:visited {
+  color: inherit;
+}
+
+/*header*/
+
+header {
+  background-color: yellowgreen;
+  padding: 1.8% 0;
+  font-size: 2em;
+  text-align: center;
+  font-family: "yg-jalnan";
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* main */
+
+.main_image {
+  background-image: url(images/yam.png);
+  height: 40vh;
+  background-repeat: no-repeat;
+  background-position: right;
+  border-bottom: #999 1px solid;
+}
+
+.main_image span {
+  font-size: 2.8em;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  font-family: "GmarketSansLight";
+}
+
+.language {
+  margin: 50px auto;
+}
+
+.image_form {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_form input {
+  padding: 0.9em;
+  width: 30vw;
+  border: #8fbe2f 3px solid;
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+
+.image_form button {
+  background-color: white;
+  padding: 0.8em;
+  width: 30vw;
+  border: #8fbe2f 3px solid;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+/* footer */
+.top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 2em;
+  color: black;
+}
+
+.top a {
+  display: inline-block;
+  color: black;
+  opacity: 1;
+
+  -webkit-transition: all 0.55s ease;
+  -moz-transition: all 0.55s ease;
+  -ms-transition: all 0.55s ease;
+  -o-transition: all 0.55s ease;
+  transition: all 0.55s ease;
+}
+
+.top a:hover {
+  color: red;
+}
+
+/*반응형*/
+@media screen and (max-width: 768px) {
+  /*태블릿*/
+
+  header {
+    font-size: 1.5em;
+  }
+
+  .language {
+    left: 25%;
+    width: 50%;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .language span {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /*핸드폰*/
+
+  header {
+    font-size: 1.5em;
+  }
+
+  .language {
+    left: 15%;
+    width: 70%;
+  }
+
+  .language span {
+    font-size: 30px;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 500px) {
+  /*태블릿, 컴퓨터*/
+}
