@@ -6,8 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var uploadRouter = require('./routes/upload');
+var sequelize = require('./models').sequelize;
 
 var app = express();
+sequelize.sync();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

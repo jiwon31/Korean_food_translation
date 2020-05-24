@@ -16,13 +16,15 @@ const upload = multer({
   });
 
 router.get('/', function(req, res, next) {
+  console.log("실행");
    res.render('image');
   });
 
 router.post('/result', upload.single('img'), async (req, res, next) => {
     try {
       res.render('result');
-      const filename = req.file.filename;
+      const filename = 'menu2';
+      //req.file.filename;
       let text = await textDetect(filename);
       
       for(var i in text){

@@ -3,7 +3,7 @@ module.exports = async function (fileName) {
     const vision = require('@google-cloud/vision');
     const client = new vision.ImageAnnotatorClient();
 
-    const path = 'uploads/'+fileName;
+    const path = '../uploads/'+fileName;
     const [result] = await client.documentTextDetection(path);
     const detections = result.textAnnotations;
 
