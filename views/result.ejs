@@ -28,11 +28,22 @@
               var rwidth = (position[i].boundingPoly[1].x - position[i].boundingPoly[0].x) / width * 100;
               var rheight = (position[i].boundingPoly[2].y - position[i].boundingPoly[0].y) / height * 100;
             %>
-            <rect id = "rect<%= i %>" x="<%= rx %>%" y="<%= ry %>%" width="<%= rwidth %>%" height="<%= rheight %>%"/>
-            <text id = text x="50" y="60" dx="10" dy="15">
-            </text>
+            <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">
+              <rect id = "rect<%= i %>" x="<%= rx %>%" y="<%= ry %>%" width="<%= rwidth %>%" height="<%= rheight %>%"/>
+              <text id = text x="<%= rx %>%" y="<%= ry %>%" dx="5" dy="15">
+              text
+              </text>
+            </a>
             <% } %>
           </svg>
+          <div id="light" class="white_content">
+            text text text 
+          <div class="close">
+          <a href = "javascript:void(0)" onclick = "document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">
+          <i class="fa fa-times" aria-hidden="true"></i>
+          </a></div>
+          </div>
+          <div id="fade" class="black_overlay"></div>
         </div>
       </div>
     </main>
