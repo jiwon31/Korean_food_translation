@@ -27,8 +27,6 @@ router.post('/result', upload.single('img'), async (req, res, next) => {
       var dimensions = sizeOf(path);
       const filename = req.file.filename;
       let text = await textDetect(filename);
-
-      res.render('result', {path: path, width: dimensions.width, height: dimensions.height, position: text});
       
       for(var i in text){
         text[i].translation = await textTranslate(text[i].description, 'en');
@@ -40,6 +38,8 @@ router.post('/result', upload.single('img'), async (req, res, next) => {
         console.log(t.boundingPoly);
         console.log("--------------------");
       });
+
+      res.render('result', {path: path, width: dimensions.width, height: dimensions.height, position: text});
 
     }
     catch(err){
