@@ -14,12 +14,68 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <script type="text/javascript" src="./js/view.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.0.min.js" ></script>
+    <script>
+    window.onload = function() {
+      var w = window.innerWidth;
+      var h = window.innerHeight;
+      var wper = <%= width %> / <%= height %> * 100;
+      var hper = <%= height %> / <%= width %> * 100;
+      if (w > h) {
+        if (<%= width %> > <%= height %>) {
+        document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); height: ' + hper + 'vh' ); 
+        }
+        else if (<%= width %> < <%= height %>) {
+          document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); width: ' + wper + 'vh' );
+        }
+        else {
+          document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); height: 100vh' );
+        } 
+      }
+      else {
+        document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); height: ' + hper + 'vw' ); 
+      }
+    }
+    </script>
+    <script>
+      window.addEventListener("resize", myFunction);
+
+      function myFunction() {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        var wper = <%= width %> / <%= height %> * 100;
+        var hper = <%= height %> / <%= width %> * 100;
+      if (w > h) {
+        if (<%= width %> > <%= height %>) {
+        document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); height: ' + hper + 'vh' ); 
+        }
+        else if (<%= width %> < <%= height %>) {
+          document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); width: ' + wper + 'vh' );
+        }
+        else {
+          document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); height: 100vh' );
+        } 
+      }
+      else {
+        document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); height: ' + hper + 'vw' ); 
+      }
+      }
+    </script>
+    <!--<script>
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    if (h < w) {
+      document.write('text');
+      //$(".img")attr('style','background-image: url(../<%= path %>); height : 100vh');
+      //document.getElementById( 'img' ).setAttribute( 'style', 'background-image: url(../<%= path %>); height: 100vh' ); 
+    }
+    </script>-->
     <title>SSU Menu</title>
   </head>
   <body>
     <main>
       <div class=wrap>
-        <div class="img" style="background-image: url(../<%= path %>);">
+        <div id=img class="img" style="background-image: url(../<%= path %>)">
           <svg id=svg>
             <% for (var i = 1; i < position.length; i++) { %>
             <% 
@@ -30,7 +86,7 @@
             %>
             <a href = "javascript:void(0)" onclick = "document.getElementById('light<%= i %>').style.display='block';document.getElementById('fade').style.display='block'">
               <rect id = "rect<%= i %>" x="<%= rx %>%" y="<%= ry %>%" width="<%= rwidth %>%" height="<%= rheight %>%"/>
-              <text id = text x="<%= rx %>%" y="<%= ry %>%" dx="5" dy="15">
+              <text id = text x="<%= rx %>%" y="<%= ry %>%" dx="0.5%" dy="2%">
               <%= position[i].translation%>
               </text>
             </a>
