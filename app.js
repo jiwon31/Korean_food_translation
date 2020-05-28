@@ -6,8 +6,10 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var uploadRouter = require('./routes/upload');
+var sequelize = require('./models').sequelize;
 
 var app = express();
+sequelize.sync();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +24,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/image', uploadRouter);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
 
 app.listen(3000, function(){
   console.log('Connected 3000 port!');

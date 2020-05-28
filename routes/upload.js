@@ -3,6 +3,7 @@ var multer = require('multer');
 var router = express.Router();
 var textDetect = require("./textDetect");
 var textTranslate = require("./textTranslate");
+var connectWord = require("./connectWord");
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -21,25 +22,28 @@ router.get('/', function(req, res, next) {
 
 router.post('/result', upload.single('img'), async (req, res, next) => {
     try {
-      console.log(req.file);
       var path = "uploads/" + req.file.filename;
+      const filename = req.file.filename;
       var sizeOf = require('image-size');
       var dimensions = sizeOf(path);
-      const filename = req.file.filename;
-      let text = await textDetect(filename);
 
-      res.render('result', {path: path, width: dimensions.width, height: dimensions.height, position: text});
-      
-      for(var i in text){
-        text[i].translation = await textTranslate(text[i].description, 'en');
+      let menu = await textDetect(filename);
+      //let text = await connectWord(detections);
+      for(var i in menu){
+        console.log(menu[i].text);
+        menu[i].translation = await textTranslate(menu[i].text, 'en');
       }
 
+      
+      res.render('result', {path: path, width: dimensions.width, height: dimensions.height, position: menu});
+
+      /*
       text.forEach((t) => {
         console.log(t.description);
         console.log("=> " + t.translation);
         console.log(t.boundingPoly);
         console.log("--------------------");
-      });
+      });*/
 
     }
     catch(err){

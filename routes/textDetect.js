@@ -1,21 +1,22 @@
-//'use strict';
+const connectWord = require('./connectWord');
+
 module.exports = async function (fileName) {
     const vision = require('@google-cloud/vision');
     const client = new vision.ImageAnnotatorClient();
 
     const path = 'uploads/'+fileName;
     const [result] = await client.documentTextDetection(path);
-    const detections = result.textAnnotations;
-
-    array = [];
+    //const detections = result.textAnnotations;
+    //console.log(result);
+    const array = await connectWord(result);
+    /*array = [];
     detections.forEach(text => {
-        let description = text.description.replace(/[0-9]|,|\s$/gi, "");
-        if(description != ""){
+        //let description = text.description.replace(/[0-9]|,|\s$/gi, "");
+        if(!/[0-9]|[()\[\]/.]/.test(text.description[0])){
+            let description = text.description;
             array.push({description : description, boundingPoly : text.boundingPoly.vertices});
         }
-    });
-    //console.log("print array\n");
-    //console.log(array.boundingPoly[0].x);
+    });*/
  
-    return array;
+    return array
 };

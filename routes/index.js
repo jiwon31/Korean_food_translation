@@ -3,10 +3,14 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index');
+  res.render('main');
 });
 
-router.post('/', function(req, res, next) {
+router.get('/index', function(req, res, next) {
+  res.render('index');
+})
+
+router.post('/index', function(req, res, next) {
   //언어 받아오기
 });
 
