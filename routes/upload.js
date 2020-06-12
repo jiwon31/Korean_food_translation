@@ -4,6 +4,8 @@ var router = express.Router();
 var textDetect = require("./textDetect");
 var textTranslate = require("./textTranslate");
 var connectWord = require("./connectWord");
+var { Data } = require('../models');
+var lan;
 
 const upload = multer({
     storage: multer.diskStorage({
@@ -17,8 +19,9 @@ const upload = multer({
   });
 
 router.get('/', function(req, res, next) {
-   res.render('image');
-  });
+  lan = req.query.lan;
+  res.render('image');
+});
 
 router.post('/result', upload.single('img'), async (req, res, next) => {
     try {
@@ -28,12 +31,28 @@ router.post('/result', upload.single('img'), async (req, res, next) => {
       var dimensions = sizeOf(path);
 
       let menu = await textDetect(filename);
-      //let text = await connectWord(detections);
-      for(var i in menu){
-        console.log(menu[i].text);
-        menu[i].translation = await textTranslate(menu[i].text, 'en');
-      }
+      var info = [];
 
+      for(var i in menu){
+        var search = await Data.findOne({
+          where: {koname: menu[i].text}
+        });
+        if(search != undefined){
+          if(lan == 'en'){
+            menu[i].translation = search.en;
+          }
+          else{
+            menu[i].translation = await textTranslate(menu[i].text, lan);
+          }
+          menu[i].info = await textTranslate(search.info, lan);
+          menu[i].img = search.img;
+        }
+        else{
+          menu[i].translation = await textTranslate(menu[i].text, lan);
+        }
+      }
+      console.log(menu);
+    
       
       res.render('result', {path: path, width: dimensions.width, height: dimensions.height, position: menu});
 

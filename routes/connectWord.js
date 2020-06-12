@@ -60,7 +60,7 @@ decideMerge = (word, newword) => {
 }
 
 module.exports = async function(res) {
-    const textAnnotations = res.textAnnotations
+    //const textAnnotations = res.textAnnotations
     const { pages } = res.fullTextAnnotation;
 
     let menu = [];
@@ -73,17 +73,29 @@ module.exports = async function(res) {
                 word.text = '';
                 word.vertices = [];
                 paragraph.words.forEach(w => {
+                    console.log(w);
                     push = false;
+                    
                     //var ww = w.symbols.map(s=>s.text).join('');
                     //console.log(ww);
-                    if(!w.symbols[0].text.match(/[0-9]|\\|\(|\)/)){
+
+                    if(w.symbols[0].text.match(/[0-9]|,|\(|\)|\.|\-|개|원|\[|\]|\//)){
+                        if(word.text != ''){
+                            menu.push(word);
+                            word = {};
+                            word.text = '';
+                            word.vertices = [];
+                        }
+                    }
+                    else {
                         var newtext = w.symbols.map(s => s.text).join('');
+                        //console.log(newtext);
 
                         //merge할지 결정함
                         if(word.vertices == false){
                             flag = true;
                         }
-                        else{
+                        else {
                             var flag = decideMerge(word.vertices, w.boundingBox.vertices);
                         }
 
@@ -96,6 +108,7 @@ module.exports = async function(res) {
                             else{
                                 word.vertices = mergeWord(word.vertices, w.boundingBox.vertices);
                             }
+                            //console.log(word.text);
                         }
                         else if(flag == false){
                             push = true;
@@ -110,28 +123,6 @@ module.exports = async function(res) {
                         wordText.vertices = mergeSymbol(wordText.vertices, symbol.boundingPoly);
                     })*/
 
-                    /*word.symbols.forEach(symbol => {
-                        console.log(symbol.text);
-                        if(symbol.text.match(/[0-9]|[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\\=\(\'\"]/gi)){
-                            if(text != ""){
-                                push = true;
-                                menu.push(text);
-                            }
-                            text = '';
-                            return;
-                        }
-                        else {
-                            vertices = mergeSymbol(text, symbol.text);
-                            if(decideMerge(text, vertices) == true){
-                                text += symbol.text;
-                            }
-                            else {
-                                vertices = {};
-                                return;
-                            }
-                            text += symbol.text;
-                        }
-                    })*/
                 })
                 if(push==false && word.text!=''){
                     menu.push(word);
